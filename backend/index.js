@@ -9,6 +9,9 @@ const port = 3000;
 const app = express();
 app.use(express.json())
 app.use(cors())
+app.get('/',(req,res)=>{
+    res.status(200).json({message:'server is up'})
+})
 app.use('/users', userRouter)
 app.use('/todos', todoRouter)
 app.listen(port, async() => {
